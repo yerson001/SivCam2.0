@@ -1,0 +1,19 @@
+<!DOCTYPE=html>
+<html>
+<head>
+    <title>
+        History surveillance report
+    </title>
+</head>
+<body>
+    {% for day in days %}
+    <h2> Day {{day}} </h2>
+    {% for im in imgs %}
+     {% if day is in(im) %}
+    <a href="{{url_for('static', filename=im)}}"> <img src="{{url_for('static', filename=im)}}" width="200" alt="{{im}}">
+    </a>
+     {% endif %}
+    {% endfor %}
+    {% endfor %}
+</body>
+</html>

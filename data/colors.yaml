@@ -1,0 +1,41 @@
+## color code for classes
+
+main_colors:
+    drone:
+        id: 0
+        color: 0, 0, 255
+    bird:
+        id: 1
+        color: 255, 255, 0
+    plane:
+        id: 2
+        color: 255, 0, 0
+    balloon:
+        id: 3
+        color: 0, 255, 0
+    helicopter:
+        id: 4
+        color: 255, 128, 128
+    uncertain:
+        id: -1
+        color: 128, 128, 40
+
+secondary_colors:
+    drone:
+        id: 0
+        color: 0, 0, 255
+    bird:
+        id: 1
+        color: 255, 255, 0
+    plane:
+        id: 2
+        color: 255, 0, 0
+    balloon:
+        id: 3
+        color: 0, 255, 0
+    helicopter:
+        id: 4
+        color: 255, 128, 128
+    uncertain:
+        id: -1
+        color: 128, 128, 40

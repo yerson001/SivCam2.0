@@ -1,0 +1,18 @@
+<!DOCTYPE=html>
+<html>
+<head>
+    <title>
+        Video summary Report
+    </title>
+</head>
+<body>
+ <h2>Summary video per day</h2>
+  {% for file in vids %}
+  <h3>{{file}}</h3>
+  <video width="640" height="480" controls>
+    <source src="{{ url_for('static', filename=file) }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  {% endfor %}
+</body>
+</html>
