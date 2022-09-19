@@ -1,0 +1,133 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        font-family: "Montserrat", sans-serif;
+    }
+
+
+    li,a,button {
+        font-weight: 500;
+        font-size: 16px;
+        color: black;
+        text-decoration: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 30px 10%;
+        flex-wrap: wrap;
+        flex-direction:row;
+    }
+    .logo {
+        height: auto; 
+        width: auto; 
+        max-width: 100px; 
+        max-height: 100px;
+        cursor: pointer;
+        margin-right: auto;
+    }
+    .navbar-links{
+        list-style: none;
+    }
+    .navbar-links li{
+        display: inline-block;
+        padding: 0px 20px;
+    }
+    .navbar-links li a{
+        transition: all 0.3s ease 0s;
+    }
+    button{
+        padding: 9px 25px;
+        background-color: #d47542;
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-left: 20px;
+        transition: all 0.3s ease 0s;
+    }
+    .camera-container{
+        background-color: #d47542;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 30px 10%;
+        min-height: 400px;
+    }
+    .camera-title{
+        background-color: #d47542;
+        align-items: center;
+        margin: 50px;
+        font-weight: 900;
+        font-size: 48px;
+        color: #fff;
+    }
+    .camera-input{
+        
+        align-items: center;
+        border:0;
+        outline: none;
+        border-radius: 20px;
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    .description-container{
+        display: flex;
+        background-color: #fff;
+        justify-content: center;
+        padding: 30px 10%;
+        
+    }
+    footer{
+        background-color: black;
+        min-height: 150px;
+        position:fixed;
+        bottom:0;
+        width:100%;
+    }
+</style>
+<!----------------------------------------------------->
+<html>
+<body>
+    <title>RESUMEN</title>
+
+    <header>
+        <img class="logo" src="logoSivcam.png" alt="logo">
+        
+        <nav>
+            <ul class="navbar-links">
+                <li><a href="#">Imagenes</a></li>
+                <li><a href="#">Videos resumidos</a></li>
+                <li><a href="#">Crear resumen</a></li>
+            </ul>
+        </nav>
+
+        <a class="sign-in" href="#"><button>Ingresar</button></a>
+        <a class="sign-up" href="#"><button>Registrarse</button></a>
+    </header>
+    <div class="camera-container">
+        <div class="camera-title">
+            Somos Sivcam<br>
+            Poner algo interesante <br>
+            aqui    
+        </div>
+        
+        
+        <input class="camera-input" type="text" placeholder="ID de la camera">
+        <button></button>
+    </div>
+    <div class="description-container">
+
+    </div>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

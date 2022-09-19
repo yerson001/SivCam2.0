@@ -1,7 +1,43 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: d87440;
+}
+.navbar-header{
+  background-color: aqua;
+}
+.navbar-collapse{
+  background-color: black;
+}
+li, a, button{
+  font-family:"Montserrat",sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%; 
+}
+</style>
+<!----------------------------------------------------->
 <html>
   <head>
     <title>RESUMEN</title>
+    <nav>
+      <ul class="navbar-links">
+        <li><a href="#">Imagenes</a></li>
+        <li><a href="#">Videos resumidos</a></li>
+        <li><a href="#">Crear resumen</a></li>
+      </ul>
+    </nav>
   </head>
+
+
   <body>
     <h1> [SIVCAM2.0] RESUMEN DE VIDEO</h1>
     <img src="{{ url_for('video_feed') }}">
