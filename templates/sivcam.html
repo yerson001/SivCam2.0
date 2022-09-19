@@ -20,7 +20,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding: 30px 10%;
+        padding: 0px 10%;
         flex-wrap: wrap;
         flex-direction:row;
     }
@@ -47,35 +47,70 @@
         background-color: #d47542;
         color: #fff;
         border: none;
-        border-radius: 50px;
+        border-radius: 8px;
         cursor: pointer;
         margin-left: 20px;
         transition: all 0.3s ease 0s;
     }
     .camera-container{
-        background-color: #d47542;
+        /*background-color: #d47542;*/
+        background-image: linear-gradient(rgba(212, 117, 66,0.7),rgba(212, 117, 66,0.7)), url(images/CCTV.jpg);
         display: flex;
         justify-content: flex-start;
         align-items: center;
         padding: 30px 10%;
         min-height: 400px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .camera-header{
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
     }
     .camera-title{
-        background-color: #d47542;
-        align-items: center;
-        margin: 50px;
+        background: transparent;
+        margin: 30px;
         font-weight: 900;
-        font-size: 48px;
+        font-size: 60px;
         color: #fff;
     }
-    .camera-input{
-        
-        align-items: center;
-        border:0;
-        outline: none;
-        border-radius: 20px;
+    .camera-subtitle{
+        color: #fff;
+        background: transparent;
         font-size: 16px;
-        padding: 10px 20px;
+    }
+
+    .camera-container-input{
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+    .camera-input{
+        flex: 1 1 auto;
+        background:transparent;
+        border: 0;
+        outline: none;
+        font-size: 16px;
+        padding: 20px 20px;
+        width: 100%;
+    }
+    .camera-container-input button{
+        border: 0;
+        border-radius: 50px;
+        width: 60px;
+        height: 60px;
+        background: transparent;
+        cursor: pointer;
+        padding: 10px;
+    }
+    .camera-container-input button img{
+        margin: auto;
+        
     }
     .description-container{
         display: flex;
@@ -85,11 +120,18 @@
         
     }
     footer{
+        display: flex;
+        align-items: center;
         background-color: black;
-        min-height: 150px;
+        min-height: 50px;
         position:fixed;
         bottom:0;
         width:100%;
+    }
+    .footer-text{
+        color: #fff;
+        background: transparent;
+        margin-left: 15px;
     }
 </style>
 <!----------------------------------------------------->
@@ -98,7 +140,7 @@
     <title>RESUMEN</title>
 
     <header>
-        <img class="logo" src="logoSivcam.png" alt="logo">
+        <img class="logo" src="images/sivcam-logo.png" alt="logo">
         
         <nav>
             <ul class="navbar-links">
@@ -112,21 +154,27 @@
         <a class="sign-up" href="#"><button>Registrarse</button></a>
     </header>
     <div class="camera-container">
-        <div class="camera-title">
-            Somos Sivcam<br>
-            Poner algo interesante <br>
-            aqui    
+        <div class="camera-header">
+            <div class="camera-title">
+                Somos Sivcam
+            </div>
+            <div class="camera-subtitle">
+                poner algo <br>
+                interesante
+            </div>
         </div>
-        
-        
-        <input class="camera-input" type="text" placeholder="ID de la camera">
-        <button></button>
+        <div class="camera-container-input">
+            <input class="camera-input" type="text" placeholder="ID de la cámara">
+            <button type="submit"><img src="images/search-icon.png"></button>
+        </div>        
     </div>
     <div class="description-container">
 
     </div>
     <footer>
-
+        <div class="footer-text">
+            © SIVCAM 2022 ® - Resumidor de videos  
+        </div>
     </footer>
 </body>
 
