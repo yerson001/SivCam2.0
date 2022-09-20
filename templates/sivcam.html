@@ -7,28 +7,25 @@
         background-color: #fff;
         font-family: "Montserrat", sans-serif;
     }
-
-
     li,a,button {
         font-weight: 500;
         font-size: 16px;
         color: black;
         text-decoration: none;
     }
-
     header {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding: 0px 10%;
+        padding: 0 10%;
         flex-wrap: wrap;
         flex-direction:row;
     }
     .logo {
         height: auto; 
         width: auto; 
-        max-width: 100px; 
-        max-height: 100px;
+        max-width: 130px; 
+        max-height: 130px;
         cursor: pointer;
         margin-right: auto;
     }
@@ -44,7 +41,7 @@
     }
     button{
         padding: 9px 25px;
-        background-color: #d47542;
+        background-color: #ff9451;
         color: #fff;
         border: none;
         border-radius: 8px;
@@ -54,14 +51,16 @@
     }
     .camera-container{
         /*background-color: #d47542;*/
-        background-image: linear-gradient(rgba(212, 117, 66,0.7),rgba(212, 117, 66,0.7)), url(images/CCTV.jpg);
+        background-image: linear-gradient(rgba(255, 148, 81,0.7),rgba(255, 148, 81,0.7)), url(images/CCTV.jpg);
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-around;
         align-items: center;
         padding: 30px 10%;
         min-height: 400px;
         background-repeat: no-repeat;
         background-size: cover;
+        flex-wrap: wrap;
+        color: #fff;
     }
     .camera-header{
         background: transparent;
@@ -70,20 +69,13 @@
         align-items: center;
         text-align: center;
         padding: 15px;
+        color: inherit;
     }
-    .camera-title{
+    
+    .camera-header ~ strong, h3, h2, h1{
         background: transparent;
-        margin: 30px;
         font-weight: 900;
-        font-size: 60px;
-        color: #fff;
-    }
-    .camera-subtitle{
-        color: #fff;
-        background: transparent;
-        font-size: 16px;
-    }
-
+    }  
     .camera-container-input{
         display: flex;
         align-items: center;
@@ -113,20 +105,37 @@
         
     }
     .description-container{
-        display: flex;
         background-color: #fff;
-        justify-content: center;
+    }
+    .images-container, .videos-resumidos-container, .crear-resumen-container{
+        display: flex;
+        background: transparent;
+        align-items: center;
+        justify-content: space-around;
         padding: 30px 10%;
-        
+        margin: 0 auto;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .images-container{
+        background-color: #eaeaea;
+    }
+    .description-text{
+        background: transparent;
+        padding: 15px;
+    }
+    .description-image{
+        width: 500px;
     }
     footer{
         display: flex;
         align-items: center;
         background-color: black;
         min-height: 50px;
-        position:fixed;
+        position:relative;
         bottom:0;
         width:100%;
+        padding: auto;
     }
     .footer-text{
         color: #fff;
@@ -140,8 +149,8 @@
     <title>RESUMEN</title>
 
     <header>
-        <img class="logo" src="images/sivcam-logo.png" alt="logo">
-        
+        <img class="logo" src="images/SIVCAMlogo.png" alt="logo">
+        <!--
         <nav>
             <ul class="navbar-links">
                 <li><a href="#">Imagenes</a></li>
@@ -149,19 +158,19 @@
                 <li><a href="#">Crear resumen</a></li>
             </ul>
         </nav>
-
+        -->
         <a class="sign-in" href="#"><button>Ingresar</button></a>
         <a class="sign-up" href="#"><button>Registrarse</button></a>
     </header>
     <div class="camera-container">
         <div class="camera-header">
-            <div class="camera-title">
-                Somos Sivcam
-            </div>
-            <div class="camera-subtitle">
-                poner algo <br>
-                interesante
-            </div>
+            <h1>
+                SIVCAM
+            </h1>
+            <h3>
+                Resume videos empleando inteligencia artificial <br>
+                Ingresa el ID de la camara para empezar
+            </h3>                
         </div>
         <div class="camera-container-input">
             <input class="camera-input" type="text" placeholder="ID de la cámara">
@@ -169,11 +178,39 @@
         </div>        
     </div>
     <div class="description-container">
-
+        <div class="crear-resumen-container">
+            <div class="description-text">
+                <h1>Resumir video</h1>
+                <h3>
+                    Una poderosa herramienta que resume<br>
+                    videos empleando inteligencia artificial
+                </h3>
+            </div>
+            <img class="description-image" src="images/CCTVResumen.png">
+        </div>
+        <div class="images-container">
+            <div class="description-text">
+                <h1>Imagenes</h1>
+                <h3>
+                    Observa las actividades de los videos
+                </h3>
+            </div>
+            <img class="description-image" src="images/CCTVFootage.jpg">
+        </div>
+        <div class="videos-resumidos-container">
+            <div class="description-text">
+                <h1>Videos</h1>
+                <h3>
+                    Observa el video resumido de posible <br>
+                    actividad detectada
+                </h3>
+            </div> 
+            <img class="description-image" src="images/CCTVVideosResumidos.jpg">
+        </div>
     </div>
     <footer>
         <div class="footer-text">
-            © SIVCAM 2022 ® - Resumidor de videos  
+            © SIVCAM 2022 ® - Vídeo resumen 
         </div>
     </footer>
 </body>
