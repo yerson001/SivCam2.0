@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .login{
+        background-image: linear-gradient(0.7turn, #fb8500, #fcc137);
+        background-repeat: no-repeat;
+        min-height: 95vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+        height: 30%;
+        width: 65%;
+
+
+        padding: 5%;
+        background-color: #fff;
+        border-radius: 18px;
+        box-shadow: 5px 10px #d37000;
+    }
+
+    .login-info-container {
+        flex: 1 1 0;
+        width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        font-size:2.3vw;
+    }
+
+    .inputs-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 25px;
+        width: 100%;
+    }
+
+    .inputs-container input {
+        margin: 5px;
+        flex: 1 1 auto;
+        width: 100%;
+        font-size: 1.5vw;
+        height: 40%;
+    }
+    .inputs-container label{
+        font-size: 1.5vw;
+
+    }
+    .inputs-container input[type="date"]{
+        background-color: #fcc137;
+        color: black;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+    }
+    .inputs-container button {
+        width: 100%;
+        flex: 1 1 auto;
+        font-size: 2.1vw;
+        margin-top: 4px;
+        background-color: #fcc137;
+        height: 5.5vh;
+        /*color: #fff;*/
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+    }
+    .login-image {
+        flex: 1 1 0;
+        width: 0;
+        overflow: hidden;
+        margin-left: 20px;
+    }
+
+    .login-image img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    footer {
+        display: flex;
+        align-items: center;
+        background-color: black;
+        min-height: 5vh;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        padding: auto;
+    }
+
+    .footer-text {
+        color: #fff;
+        background: transparent;
+        margin-left: 15px;
+    }
+</style>
+
+<html>
+
+<head>
+    <title>Registrarse-Sivcam</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="login">
+        <div class="login-container">
+            <div class="login-info-container">
+                <h1>
+                    Registrarse
+                </h1>
+                <form class="inputs-container">
+                    <input class="input" type="text" placeholder="Nombre">
+                    <input class="input" type="email" placeholder="Correo electrónico">
+                    
+                    <label>Fecha de nacimiento</label>
+                    <input type="date" placeholder="Fecha nacimiento">
+                    
+                    
+                    <input class="input" type="password" placeholder="Contraseña">
+                    <button>Registrarme</button>
+                </form>
+    
+            </div>
+            <div class="login-image">
+                <img class="login-svg" src="images/login.svg">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-text">
+            © SIVCAM 2022 ® - Vídeo resumen
+        </div>
+    </footer>
+</body>
+</html>
