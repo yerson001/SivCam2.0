@@ -59,19 +59,22 @@
         font-size: 1.5vw;
         height: 40%;
     }
-
-    .inputs-container button {
+    .inputs-container a{
         width: 100%;
         flex: 1 1 auto;
-        font-size: 2.1vw;
         margin-top: 4px;
+    }
+    .inputs-container button {
+        width: 100%;
+        font-size: 2.1vw;
+        
         background-color: #fcc137;
         height: 5.5vh;
         /*color: #fff;*/
         border: none;
         border-radius: 8px;
         cursor: pointer;
-        transition: all 0.3s ease 0s;
+        /*transition: all 0.3s ease 0s;*/
     }
 
     .login-image {
@@ -124,13 +127,14 @@
                 <form class="inputs-container">
                     <input class="input" type="text" placeholder="Usuario">
                     <input class="input" type="password" placeholder="Contraseña">
-                    <button>Iniciar sesión</button>
-                    <button>Crear cuenta</button>
+                    <a class="sign-in" href="#"><button>Iniciar sesión</button></a>
+                    <a class="sign-up" href="/register"><button>Crear cuenta</button></a>
+                    
                 </form>
     
             </div>
             <div class="login-image">
-                <img class="login-svg" src="images/login.svg">
+                <img class="login-svg" src="static/images/login.svg">
             </div>
         </div>
     </div>

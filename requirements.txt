@@ -1,10 +1,11 @@
-click==7.1.1
+click==8.0
 Flask==2.1.0
 imutils==0.5.3
-itsdangerous==1.1.0
-Jinja2==2.11.1
-MarkupSafe==1.1.1
-numpy==1.18.2
+itsdangerous==2.0
+Jinja2==3.0
+MarkupSafe==2.0.0rc2
+numpy==1.20
 opencv-python==4.2.0.34
 tqdm==4.45.0
-Werkzeug==1.0.1
+Werkzeug==2.0
+tensorflow==2.10.0
