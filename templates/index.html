@@ -29,23 +29,26 @@ header{
   <head>
     <title>RESUMEN</title>
     <nav>
-      <ul class="navbar-links">
+      <!-- <ul class="navbar-links">
         <li><a href="#">Imagenes</a></li>
         <li><a href="#">Videos resumidos</a></li>
         <li><a href="#">Crear resumen</a></li>
-      </ul>
+      </ul> -->
     </nav>
   </head>
 
 
   <body>
     <h1> [SIVCAM2.0] RESUMEN DE VIDEO</h1>
-    <img src="{{ url_for('video_feed') }}">
+    <img src="{{ url_for('video_feed') }}", width="500" ,height="600">
     <br>
-    <a href="/summary">Imágenes </a>
+    <br>
+    <a href="/summary">Imagenes</a>
    <br>
     <a href="/video_summary">Videos resumidos</a>
    <br>
-    <a>Crear resumen</a>
+    <a href="/make_summary">Crear resumen</a>
   </body>
 </html>
+
+
