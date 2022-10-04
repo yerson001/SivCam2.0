@@ -18,23 +18,15 @@ from MultiObjectMotionDetection import MultiObjectMotionDetector
 from flask import Response
 from flask import Flask
 from flask import render_template
-<<<<<<< Updated upstream:app.py
-from create_video import make_video
-=======
 from flask import redirect
 from flask import url_for
 from flask import request
->>>>>>> Stashed changes:start_flask.py
+import sqlite3
+from create_video import make_video
 from ObjectDetectorTFLITE import ObjectDetectorTFLITE, read_class_colors, scale_boxes, read_class_names, draw_bbox
 from flask_ngrok import run_with_ngrok
 
-<<<<<<< Updated upstream:app.py
 class MemorySharing():
-=======
-import sqlite3
-
-class ImageWeb():
->>>>>>> Stashed changes:start_flask.py
 
     def __init__(self):
         self.frame = None
@@ -191,46 +183,23 @@ lock = threading.Lock()
 container = MemorySharing()
 
 
-@app.route("/")
+@ app.route("/")
 def index():
-    # return the rendered template
     #return render_template("index.html")
     return render_template("sivcam.html")
 
-@app.route("/main")
-def main():
-    return render_template("index.html")
-
-@app.route("/login")
+@ app.route("/login")
 def login():
     return render_template("login.html",advertencia="")
 
-@app.route("/register")
+@ app.route("/register")
 def register():
     return render_template("register.html")
 
-@app.route("/summary")
-def summary():
-    imgs = ["images/" + file for file in os.listdir('static/images')]
-    imgs.sort(reverse=True)
-    days = [x[7:17] for x in imgs]
-    days = list(set(days))
-    days.sort(reverse=True)
-    # return the rendered template
-    return render_template("summary.html", days=days, imgs=imgs)
+@ app.route("/main")
+def main():
+    return render_template("main.html")
 
-
-@app.route("/video_summary")
-def video_summary():
-    vids = ["video_summary/" + file for file in os.listdir('static/video_summary')]
-    vids.sort(reverse=True)
-    # return the rendered template
-    return render_template("video_summary.html", vids=vids)
-
-<<<<<<< Updated upstream:app.py
-
-@app.route("/video_feed")
-=======
 @app.route("/verifyUser",methods=['POST'])
 def verifyUser():
     connection=sqlite3.connect("user_data.db")
@@ -267,8 +236,28 @@ def newUser():
 
 
     return "XD"
-@ app.route("/video_feed")
->>>>>>> Stashed changes:start_flask.py
+
+
+@app.route("/summary")
+def summary():
+    imgs = ["images/" + file for file in os.listdir('static/images')]
+    imgs.sort(reverse=True)
+    days = [x[7:17] for x in imgs]
+    days = list(set(days))
+    days.sort(reverse=True)
+    # return the rendered template
+    return render_template("summary.html", days=days, imgs=imgs)
+
+
+@app.route("/video_summary")
+def video_summary():
+    vids = ["video_summary/" + file for file in os.listdir('static/video_summary')]
+    vids.sort(reverse=True)
+    # return the rendered template
+    return render_template("video_summary.html", vids=vids)
+
+
+@app.route("/video_feed")
 def video_feed():
     # return the response generated along with the specific media
     # type (mime type)
