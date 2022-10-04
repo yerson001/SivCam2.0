@@ -232,10 +232,10 @@ def newUser():
     fechaNacimiento=request.form['fechaNacimiento']
     password=request.form['password']
 
-
-
-
-    return "XD"
+    query=f"INSERT INTO users VALUES('{nombre}','{email}','{fechaNacimiento}','{password}')"
+    
+    #cursor.execute(query)
+    return query
 
 
 @app.route("/summary")

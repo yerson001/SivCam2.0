@@ -18,7 +18,7 @@
         justify-content: flex-end;
         align-items: center;
         padding: 0 10%;
-        flex-wrap: wrap;
+        /*flex-wrap: wrap;*/
         flex-direction:row;
     }
     .logo {
@@ -26,9 +26,19 @@
         width: auto; 
         max-width: 130px; 
         max-height: 130px;
-        cursor: pointer;
         margin-right: auto;
     }
+    .menu{
+        display: inline-block;
+        align-items: center;
+        text-align: center;   
+        flex-wrap: wrap;
+    }
+    /*
+    .sign-in,sign-up{
+        padding: 15px;
+    }
+    */
     .navbar-links{
         list-style: none;
     }
@@ -41,17 +51,20 @@
     }
     button{
         padding: 9px 25px;
-        background-color: #ff9451;
+        
+        background-color: #fe7526;
         color: #fff;
         border: none;
         border-radius: 8px;
         cursor: pointer;
-        margin-left: 20px;
+        /*margin-left: 20px;*/
+        margin: 5px;
         transition: all 0.3s ease 0s;
     }
     .camera-container{
         /*background-color: #d47542;*/
-        background-image: linear-gradient(rgba(255, 148, 81,0.7),rgba(255, 148, 81,0.7)), url(/static/images_/CCTV.jpg);
+        /*background-image: linear-gradient(rgba(254, 117, 38,0.7),rgba(254, 117, 38,0.7)), url(static/images/CCTV.jpg);*/
+        background-image: linear-gradient(0.7turn, rgba(254, 117, 38,0.75), rgba(252, 188, 50,0.75)),url(static/images_landing/CCTV.jpg);
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -76,6 +89,9 @@
         background: transparent;
         font-weight: 900;
     }  
+    .camera-header h1{
+        font-size: 90px;
+    }
     .camera-container-input{
         display: flex;
         align-items: center;
@@ -124,6 +140,10 @@
         background: transparent;
         padding: 15px;
     }
+    .description-text h1{
+        font-size: 40px;
+        margin-bottom: 5px;
+    }
     .description-image{
         width: 500px;
     }
@@ -149,7 +169,7 @@
     <title>RESUMEN</title>
 
     <header>
-        <img class="logo" src="/static/images_/SIVCAMlogo.png" alt="logo">
+        <img class="logo" src="static/images_landing/SIVCAMlogo.png" alt="logo">
         <!--
         <nav>
             <ul class="navbar-links">
@@ -159,8 +179,10 @@
             </ul>
         </nav>
         -->
-        <a class="sign-in" href="/login"><button>Ingresar</button></a>
-        <a class="sign-up" href="/register"><button>Registrarse</button></a>
+        <div class="menu">
+            <a class="sign-in" href="/login"><button>Ingresar</button></a>
+            <a class="sign-up" href="/register"><button>Registrarse</button></a>
+        </div>
     </header>
     <div class="camera-container">
         <div class="camera-header">
@@ -172,40 +194,42 @@
                 empleando inteligencia artificial
             </h3>                
         </div>
+        <!--
         <div class="camera-container-input">
             <input class="camera-input" type="text" placeholder="ID de la cámara">
-            <button type="submit"><img src="/static/images_/search-icon.png"></button>
+            <button type="submit"><img src="static/images/search-icon.png"></button>
         </div>        
+        -->
     </div>
     <div class="description-container">
         <div class="crear-resumen-container">
             <div class="description-text">
-                <h1>Resumir video</h1>
+                <h1>No gastes mas tiempo</h1>
                 <h3>
-                    Una poderosa herramienta que resume<br>
-                    videos empleando inteligencia artificial
+                    Sivcam emplea una poderosa<br>herramienta para resumir los videos
                 </h3>
             </div>
-            <img class="description-image" src="/static/images_/CCTVResumen.png">
+            <img class="description-image" src="static/images_landing/CCTVResumen.png">
         </div>
         <div class="images-container">
             <div class="description-text">
-                <h1>Imagenes</h1>
+                <h1>Almacena imagenes</h1>
                 <h3>
-                    Observa las actividades de los videos
+                    Sivcam captura imagenes de supuestas<br> actividades en los videos
+                    
                 </h3>
             </div>
-            <img class="description-image" src="/static/images_/CCTVFootage.jpg">
+            <img class="description-image" src="static/images_landing/CCTVFootage.jpg">
         </div>
         <div class="videos-resumidos-container">
             <div class="description-text">
-                <h1>Videos</h1>
+                <h1>Almacena los resumenes</h1>
                 <h3>
-                    Observa el video resumido de posible <br>
-                    actividad detectada
+                    Sivcam almacena el video resumido para que<br>
+                    puedas revisarlo cuando quieras
                 </h3>
             </div> 
-            <img class="description-image" src="/static/images_/CCTVVideosResumidos.jpg">
+            <img class="description-image" src="static/images_landing/CCTVVideosResumidos.jpg">
         </div>
     </div>
     <footer>
