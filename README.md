@@ -8,5 +8,5 @@ pip install -r requirements.txt
 ```
 # Ejecutar flask
 ```
-python start_flask.py
+python app.py
 ```
