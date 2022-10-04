@@ -1,3 +1,11 @@
+# ================================================================
+#   Copyright (C) 2020 * Ltd. All rights reserved.
+#   File name   : ObjectDetectirTFLITE.py
+#   Author      : Ruben Cardenes
+#   Created date: 20.Mar.2019
+#   Description : Object Detector wrapper for TFLITE models
+# ================================================================
+
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 import tensorflow as tf
@@ -74,6 +82,8 @@ def draw_bbox(image, bboxes, classes=None,
             class_text = classes[class_ind]
 
         c1, c2 = (coor[0], coor[1]), (coor[2], coor[3])
+        # cv2.rectangle(image, c1, c2, bbox_color, bbox_thick)
+        # cv2.line(image, (x1, y1), (x2, y2), bbox_color, bbox_thick)
         w = coor[2] - coor[0]
         h = coor[3] - coor[1]
         s = min(w,h)
@@ -126,8 +136,12 @@ class ObjectDetectorTFLITE(object):
         Raises:
             ValueError: if dimension of the image is not 2
         """
+        # if len(image.shape) != 2:
+        #     raise ValueError('dimension of the image must 2')
 
         org_height, org_width, _ = image.shape
+        #print("Original shape ", (org_height, org_width))
+        #print("Reshaping to ",(self.input_shape[2], self.input_shape[1]))
         input_data = cv2.resize(image, (self.input_shape[2], self.input_shape[1]))
         input_data = np.reshape(input_data, (1, self.input_shape[2], self.input_shape[1], 3))
         input_data = input_data.astype(np.float32)
@@ -135,9 +149,17 @@ class ObjectDetectorTFLITE(object):
         # fill data and inference
         self._interpreter.set_tensor(self.input_details[0]['index'], input_data)
         self._interpreter.invoke()
+
+        # get output data
         out_boxes = self._interpreter.get_tensor(self.output_details[0]['index'])
         out_classes = self._interpreter.get_tensor(self.output_details[1]['index'])
         out_scores = self._interpreter.get_tensor(self.output_details[2]['index'])
+
+
+        # Post-processing
+        #out_boxes = utils.postprocess_boxes_2(out_boxes, (org_height, org_width),
+        #                                      self.input_shape[2], self.score_th)
+        #out_boxes = utils.nms(out_boxes, self.iou_threshold, method='nms')
         return out_boxes, out_scores, out_classes
 
 
