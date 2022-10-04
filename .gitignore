@@ -1,4 +1,5 @@
 *.pyc
 *.pyc
 static/images/
+static/video_summary/
 __pycache__/
