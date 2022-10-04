@@ -3,3 +3,4 @@
 static/images/
 static/video_summary/
 __pycache__/
+user_data.db

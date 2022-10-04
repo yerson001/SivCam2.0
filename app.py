@@ -205,18 +205,19 @@ def verifyUser():
     connection=sqlite3.connect("user_data.db")
     cursor=connection.cursor()
 
-    nombre=request.form['usuario']
+    email=request.form['email']
     password=request.form['password']
-    if(nombre.find(' ')>-1 or password.find(' ')>-1):
+    if(email.find(' ')>-1 or password.find(' ')>-1):
         return redirect(url_for('login',
         advertencia=""))
-    if(len(nombre)==0 or len(password)==0):
+    if(len(email)==0 or len(password)==0):
         return redirect(url_for('login',
         advertencia=""))
-    query=f"SELECT name,password FROM users where name='{nombre}' and password='{password}'"
+    query=f"SELECT name,password FROM users where email='{email}' and password='{password}'"
     print(query)
     cursor.execute(query)
     results=cursor.fetchall()
+    cursor.close()
     if(len(results)==0):
         return redirect(url_for('login',
         advertencia=""))
@@ -232,10 +233,11 @@ def newUser():
     fechaNacimiento=request.form['fechaNacimiento']
     password=request.form['password']
 
-    query=f"INSERT INTO users VALUES('{nombre}','{email}','{fechaNacimiento}','{password}')"
+    query=f"INSERT INTO users(name,email,fechaNacimiento,password) VALUES('{nombre}','{email}','{fechaNacimiento}','{password}')"
+    cursor.execute(query)
+    connection.commit()
     
-    #cursor.execute(query)
-    return query
+    return render_template("index.html")
 
 
 @app.route("/summary")
