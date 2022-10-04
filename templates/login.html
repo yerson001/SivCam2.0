@@ -59,17 +59,12 @@
         font-size: 1.5vw;
         height: 40%;
     }
-<<<<<<< Updated upstream
-
-    .inputs-container button {
-=======
     .login-info-container a{
         width: 100%;
         flex: 1 1 auto;
         margin-top: 4px;
     }
     .login-info-container button {
->>>>>>> Stashed changes
         width: 100%;
         flex: 1 1 auto;
         font-size: 2.1vw;
@@ -81,13 +76,10 @@
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.3s ease 0s;
-<<<<<<< Updated upstream
-=======
     }
     .login-info-container button:hover {
         background-color: black;
         color: #fff;
->>>>>>> Stashed changes
     }
 
     .login-image {
@@ -140,18 +132,10 @@
                 <h1>
                     Iniciar sesión
                 </h1>
-<<<<<<< Updated upstream
-                <form class="inputs-container">
-                    <input class="input" type="text" placeholder="Usuario">
-                    <input class="input" type="password" placeholder="Contraseña">
-                    <button href="/register">Iniciar sesión</button>
-                    <button>Crear cuenta</button>
-=======
                 <form class="inputs-container" action="/verifyUser" method="post">
                     <input class="input" name="usuario" type="text" placeholder="Usuario">
                     <input class="input" name="password" type="password" placeholder="Contraseña">
                     <a class="sign-in" href="main.html"><button>Iniciar sesión</button></a>
->>>>>>> Stashed changes
                 </form>
                 {%if advertencia|string %}
                     <h3 class="advertencia"> {{advertencia}}</h3>
