@@ -18,11 +18,23 @@ from MultiObjectMotionDetection import MultiObjectMotionDetector
 from flask import Response
 from flask import Flask
 from flask import render_template
+<<<<<<< Updated upstream:app.py
 from create_video import make_video
+=======
+from flask import redirect
+from flask import url_for
+from flask import request
+>>>>>>> Stashed changes:start_flask.py
 from ObjectDetectorTFLITE import ObjectDetectorTFLITE, read_class_colors, scale_boxes, read_class_names, draw_bbox
 from flask_ngrok import run_with_ngrok
 
+<<<<<<< Updated upstream:app.py
 class MemorySharing():
+=======
+import sqlite3
+
+class ImageWeb():
+>>>>>>> Stashed changes:start_flask.py
 
     def __init__(self):
         self.frame = None
@@ -191,7 +203,7 @@ def main():
 
 @app.route("/login")
 def login():
-    return render_template("login.html")
+    return render_template("login.html",advertencia="")
 
 @app.route("/register")
 def register():
@@ -215,8 +227,48 @@ def video_summary():
     # return the rendered template
     return render_template("video_summary.html", vids=vids)
 
+<<<<<<< Updated upstream:app.py
 
 @app.route("/video_feed")
+=======
+@app.route("/verifyUser",methods=['POST'])
+def verifyUser():
+    connection=sqlite3.connect("user_data.db")
+    cursor=connection.cursor()
+
+    nombre=request.form['usuario']
+    password=request.form['password']
+    if(nombre.find(' ')>-1 or password.find(' ')>-1):
+        return redirect(url_for('login',
+        advertencia=""))
+    if(len(nombre)==0 or len(password)==0):
+        return redirect(url_for('login',
+        advertencia=""))
+    query=f"SELECT name,password FROM users where name='{nombre}' and password='{password}'"
+    print(query)
+    cursor.execute(query)
+    results=cursor.fetchall()
+    if(len(results)==0):
+        return redirect(url_for('login',
+        advertencia=""))
+    return  render_template("index.html")
+
+@app.route("/newUser",methods=['POST'])
+def newUser():
+    connection=sqlite3.connect("user_data.db")
+    cursor=connection.cursor()
+
+    nombre=request.form['nombre']
+    email=request.form['email']
+    fechaNacimiento=request.form['fechaNacimiento']
+    password=request.form['password']
+
+
+
+
+    return "XD"
+@ app.route("/video_feed")
+>>>>>>> Stashed changes:start_flask.py
 def video_feed():
     # return the response generated along with the specific media
     # type (mime type)

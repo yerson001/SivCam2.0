@@ -70,11 +70,14 @@
         outline: none;
         border-radius: 3px;
     }
-    .inputs-container button {
+    .inputs-container a{
         width: 100%;
         flex: 1 1 auto;
-        font-size: 2.1vw;
         margin-top: 4px;
+    }
+    .inputs-container button {
+        width: 100%;
+        font-size: 2.1vw;
         background-color: #fcc137;
         height: 5.5vh;
         /*color: #fff;*/
@@ -82,6 +85,10 @@
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.3s ease 0s;
+    }
+    .inputs-container button:hover {
+        background-color: black;
+        color: #fff;
     }
     .login-image {
         flex: 1 1 0;
@@ -129,16 +136,16 @@
                 <h1>
                     Registrarse
                 </h1>
-                <form class="inputs-container">
-                    <input class="input" type="text" placeholder="Nombre">
-                    <input class="input" type="email" placeholder="Correo electrónico">
+                <form class="inputs-container" action="/newUser" method="post" >
+                    <input class="input" name="nombre" type="text" placeholder="Nombre">
+                    <input class="input" name="email" type="email" placeholder="Correo electrónico">
                     
                     <label>Fecha de nacimiento</label>
-                    <input type="date" placeholder="Fecha nacimiento">
+                    <input name="fechaNacimiento" type="date" placeholder="Fecha nacimiento">
                     
                     
-                    <input class="input" type="password" placeholder="Contraseña">
-                    <button>Registrarme</button>
+                    <input name="password" class="input" type="password" placeholder="Contraseña">
+                    <a><button>Registrarme</button></a>
                 </form>
     
             </div>
